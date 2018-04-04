@@ -1,7 +1,6 @@
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import scenarios.AddNewAccountScenario;
-import scenarios.LoginScenario;
 import scenarios.RegisterScenario;
 
 public class TransferTest extends MainTest {
@@ -22,17 +21,73 @@ public class TransferTest extends MainTest {
     }
 
     @Test
-    public void shouldSendTransfer(){
-         accountPage
+    public void shouldSendTransfer() {
+        accountPage
                 .openTransferPage()
                 .setAmmountTransfer("100")
                 .setAccountFromTransfer()
                 .setAccountToTransfer()
-                .clickTransfer();
+                .clickTransfer()
+                .transferAssertion.isTransferCompleted();
 
     }
 
+    @Test
+    public void shouldSendTransferWithRounding() {
+        accountPage
+                .openTransferPage()
+                .setAmmountTransfer("0.0059")
+                .setAccountFromTransfer()
+                .setAccountToTransfer()
+                .clickTransfer()
+                .transferAssertion.isTransferCompleted();
+    }
 
+    @Test(priority = 9)
+    public void shouldSendTransferAfterTransferWithRounding() {
+        accountPage
+                .openTransferPage()
+                .setAmmountTransfer("0.01")
+                .setAccountFromTransfer()
+                .setAccountToTransfer()
+                .clickTransfer();
+        accountPage
+                .openTransferPage()
+                .transferAssertion.isTransferAvailable();
 
+    }
+
+    @Test
+    public void shouldNotSendTransfer() {
+        accountPage
+                .openTransferPage()
+                .setAmmountTransfer(" ")
+                .setAccountFromTransfer()
+                .setAccountToTransfer()
+                .clickTransfer()
+                .transferAssertion.isTransferWrong();
+    }
+
+    @Test
+    public void shouldNotSendZeroTransfer() {
+        accountPage
+                .openTransferPage()
+                .setAmmountTransfer("0")
+                .setAccountFromTransfer()
+                .setAccountToTransfer()
+                .clickTransfer()
+                .transferAssertion.isTransferWrong();
+    }
+
+    @Test
+    public void shouldNotSendTransferWithIncorrectValue() {
+        accountPage
+                .openTransferPage()
+                .setAmmountTransfer("test@!")
+                .setAccountFromTransfer()
+                .setAccountToTransfer()
+                .clickTransfer()
+                .transferAssertion.isTransferWrong();
+    }
 
 }

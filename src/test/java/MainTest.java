@@ -35,8 +35,8 @@ public class MainTest {
         username = "username" + randomInt;
     }
 
-//    @AfterTest
-//    public void after() {
-//        driver.close();
-//    }
+    @AfterTest
+    public void after() {
+        driver.close();
+    }
 }

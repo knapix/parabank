@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class TransferPage extends MainPage {
+    public TransferAssertion transferAssertion;
 
     @FindBy(css = "[id=amount]")
     private WebElement amountTransferInput;
@@ -24,7 +25,7 @@ public class TransferPage extends MainPage {
     public TransferPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        //transferAssertion = new TransferAssertion();
+        transferAssertion = new TransferAssertion(driver);
     }
 
 

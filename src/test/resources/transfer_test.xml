@@ -1,0 +1,8 @@
+<suite name="Transfer Test">
+    <parameter name="url" value="http://parabank.parasoft.com"/>
+    <test name="TransferTest">
+        <classes>
+            <class name="TransferTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,8 @@
+<suite name="Account test">
+    <parameter name="url" value="http://parabank.parasoft.com"/>
+    <test name="AccountTest">
+        <classes>
+            <class name="AccountScenarioTest"/>
+        </classes>
+    </test>
+</suite>

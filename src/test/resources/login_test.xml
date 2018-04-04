@@ -1,0 +1,8 @@
+<suite name="LoginTestWithRegistration">
+    <parameter name="url" value="http://parabank.parasoft.com"/>
+    <test name="LoginTestAndRegistration">
+        <classes>
+            <class name="LoginTestWithScenario"/>
+        </classes>
+    </test>
+</suite>

@@ -22,7 +22,7 @@ public class TransferPage extends MainPage {
     @FindBy(css = "[value='Transfer']")
     private WebElement transferButton;
 
-    public TransferPage(WebDriver driver) {
+        public TransferPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         transferAssertion = new TransferAssertion(driver);

@@ -1,3 +1,4 @@
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import scenarios.AddNewAccountScenario;
@@ -10,7 +11,7 @@ public class TransferTest extends MainTest {
     public final String type = "SAVINGS";
 
 
-    @BeforeTest
+    @BeforeMethod                         //zmienic na @BeforeMethod - bedzie odpalal za kazdym razem
     public void beforeTestScenario() {
         indexPage.run(new RegisterScenario(username))
                 .clickLogoutButton()

@@ -1,4 +1,5 @@
-<suite name="Transfer Test">
+<suite name="Transfer Test" parallel="methods" thread-count="1">
+
     <parameter name="url" value="http://parabank.parasoft.com"/>
     <test name="TransferTest">
         <classes>

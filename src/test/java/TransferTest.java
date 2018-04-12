@@ -21,53 +21,53 @@ public class TransferTest extends MainTest {
                 .run(new AddNewAccountScenario(type, number));
     }
 
-    @Test
-    public void shouldSendTransfer() {
-        accountPage
-                .openTransferPage()
-                .setAmmountTransfer("100")
-                .setAccountFromTransfer()
-                .setAccountToTransfer()
-                .clickTransfer()
-                .transferAssertion.isTransferCompleted();
-
-    }
-
-    @Test
-    public void shouldSendTransferWithRounding() {
-        accountPage
-                .openTransferPage()
-                .setAmmountTransfer("0.0059")
-                .setAccountFromTransfer()
-                .setAccountToTransfer()
-                .clickTransfer()
-                .transferAssertion.isTransferCompleted();
-    }
-
-    @Test(priority = 9)
-    public void shouldSendTransferAfterTransferWithRounding() {
-        accountPage
-                .openTransferPage()
-                .setAmmountTransfer("0.01")
-                .setAccountFromTransfer()
-                .setAccountToTransfer()
-                .clickTransfer();
-        accountPage
-                .openTransferPage()
-                .transferAssertion.isTransferAvailable();
-
-    }
-
-    @Test
-    public void shouldNotSendTransfer() {
-        accountPage
-                .openTransferPage()
-                .setAmmountTransfer(" ")
-                .setAccountFromTransfer()
-                .setAccountToTransfer()
-                .clickTransfer()
-                .transferAssertion.isTransferWrong();
-    }
+//    @Test
+//    public void shouldSendTransfer() {
+//        accountPage
+//                .openTransferPage()
+//                .setAmmountTransfer("100")
+//                .setAccountFromTransfer()
+//                .setAccountToTransfer()
+//                .clickTransfer()
+//                .transferAssertion.isTransferCompleted();
+//
+//    }
+//
+//    @Test
+//    public void shouldSendTransferWithRounding() {
+//        accountPage
+//                .openTransferPage()
+//                .setAmmountTransfer("0.0059")
+//                .setAccountFromTransfer()
+//                .setAccountToTransfer()
+//                .clickTransfer()
+//                .transferAssertion.isTransferCompleted();
+//    }
+//
+//    @Test(priority = 9)
+//    public void shouldSendTransferAfterTransferWithRounding() {
+//        accountPage
+//                .openTransferPage()
+//                .setAmmountTransfer("0.01")
+//                .setAccountFromTransfer()
+//                .setAccountToTransfer()
+//                .clickTransfer();
+//        accountPage
+//                .openTransferPage()
+//                .transferAssertion.isTransferAvailable();
+//
+//    }
+//
+//    @Test
+//    public void shouldNotSendTransfer() {
+//        accountPage
+//                .openTransferPage()
+//                .setAmmountTransfer(" ")
+//                .setAccountFromTransfer()
+//                .setAccountToTransfer()
+//                .clickTransfer()
+//                .transferAssertion.isTransferWrong();
+//    }
 
     @Test
     public void shouldNotSendZeroTransfer() {

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class RegistrationPage extends MainPage {
 
@@ -43,8 +44,8 @@ public class RegistrationPage extends MainPage {
     @FindBy(css = "[value='Register']")
     private WebElement registerButton;
 
-    public RegistrationPage(WebDriver driver) {
-        super(driver);
+    public RegistrationPage(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
     }
 

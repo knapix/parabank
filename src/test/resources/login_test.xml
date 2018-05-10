@@ -1,5 +1,6 @@
 <suite name="LoginTestWithRegistration">
     <parameter name="url" value="http://parabank.parasoft.com"/>
+    <!--<parameter name="password" value="123456"/>-->
     <test name="LoginTestAndRegistration">
         <classes>
             <class name="LoginTestWithScenario"/>

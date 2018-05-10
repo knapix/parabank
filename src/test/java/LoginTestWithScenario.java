@@ -1,6 +1,4 @@
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.IndexPage;
 import scenarios.RegisterScenario;
 
@@ -11,7 +9,7 @@ public class LoginTestWithScenario extends MainTest {
 
 
 
-    @BeforeTest
+    @BeforeMethod
     public void beforeTest() {
         indexPage.run(new RegisterScenario(username))
                 .clickLogoutButton();
@@ -22,6 +20,7 @@ public class LoginTestWithScenario extends MainTest {
 
 
     @Test
+    //@Parameters({"password"})
     public void shouldLoginAsNewRegistered() {
         indexPage
                 .setLogin(username)

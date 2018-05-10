@@ -6,7 +6,7 @@ import scenarios.RegisterScenario;
 
 public class AccountTest extends MainTest {
     private final String accountType = "SAVINGS";
-    private final String accountNumber = "13788";
+    private final String ACCOUNT_KEY = "accountNumber";
 //    private String login = "username566";
     private String password = "123456";
     private AccountPage accountPage;
@@ -35,9 +35,10 @@ public class AccountTest extends MainTest {
     @Test
     public void shouldAddAccount() {
         accountPage
+                .getAccount(ACCOUNT_KEY)
                 .openNewAccount()
                 .setAccountType(accountType)
-                .setAccountForTransfer(accountNumber)
+                .setAccountForTransfer(ACCOUNT_KEY)
                 .clickOpenNewAccount()
                 .accountAssertion.isAccountCreated();
     }

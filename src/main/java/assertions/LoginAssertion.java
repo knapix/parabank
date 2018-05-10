@@ -23,7 +23,7 @@ public class LoginAssertion extends MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void isUserLoggedIn() {
+    public void isUserLoggedIn(){
         Assert.assertTrue(logoutButton.isDisplayed());
     }
 

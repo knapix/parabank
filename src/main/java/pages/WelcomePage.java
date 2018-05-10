@@ -5,14 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class WelcomePage extends MainPage {
 
     @FindBy(css = "[href*='logout.htm']")
     private WebElement logoutButton;
 
-    public WelcomePage(WebDriver driver) {
-        super(driver);
+    public WelcomePage(WebDriver driver, ITestContext context) {
+        super(driver, context);
         registrationAssertion = new RegistrationAssertion(driver);
         PageFactory.initElements(driver, this);
     }
@@ -21,7 +22,7 @@ public class WelcomePage extends MainPage {
 
     public IndexPage clickLogoutButton(){
         logoutButton.click();
-        return new IndexPage(driver, url);
+        return new IndexPage(driver, url, getContext()); //getter ktory wyciaga context
     }
 
 }

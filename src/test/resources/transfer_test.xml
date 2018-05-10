@@ -1,5 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
 <suite name="Transfer Test">
     <parameter name="url" value="http://parabank.parasoft.com"/>
+    <parameter name="password" value="123456"/>
     <test name="TransferTest">
         <classes>
             <class name="TransferTest"/>

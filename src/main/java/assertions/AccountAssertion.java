@@ -13,7 +13,7 @@ public class AccountAssertion extends MainPage {
     @FindBy(css = "#newAccountId")
     private List<WebElement> newAccountId;
 
-    public AccountAssertion(WebDriver driver) {
+    public  AccountAssertion(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
     }

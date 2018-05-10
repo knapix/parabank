@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CommandExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
@@ -23,10 +24,11 @@ import java.util.Random;
 
 public class MainTest {
     WebDriver driver;
-    IndexPage indexPage;
+    IndexPage indexPage;   //typ nazwa
     RegistrationPage registrationPage;
     WelcomePage welcomePage;
     AccountPage accountPage;
+    protected ITestContext context;
 
 
     String username;
@@ -34,8 +36,9 @@ public class MainTest {
 
     @BeforeMethod
     @Parameters({"url"})
-    public void before(String url) throws MalformedURLException {
+    public void before(ITestContext context, String url) throws MalformedURLException {
         driver = new ChromeDriver();
+        this.context = context;
 
 //        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 //        URL hubUrl = new URL("http://192.168.0.33:4444/wd/hub");

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestContext;
 
 public class OpenAccountPage extends MainPage {
     @FindBy(css ="[name='type']")
@@ -18,8 +19,8 @@ public class OpenAccountPage extends MainPage {
     private WebElement openNewAccountButton;
     public AccountAssertion accountAssertion;
 
-    public OpenAccountPage(WebDriver driver) {
-        super(driver);
+    public OpenAccountPage(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver,this);
         accountAssertion = new AccountAssertion(driver);
     }
@@ -30,8 +31,8 @@ public class OpenAccountPage extends MainPage {
     }
 
     public OpenAccountPage setAccountForTransfer(String account) {
-//        new Select(accountNumberSelect).selectByValue(account);
-        new Select(accountNumberSelect).selectByIndex(0);
+        new Select(accountNumberSelect).selectByValue(getContextAttribute(account));
+//        new Select(accountNumberSelect).selectByIndex(0);
         return this;
     }
 

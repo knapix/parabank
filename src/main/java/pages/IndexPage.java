@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class IndexPage extends MainPage {
 
@@ -21,8 +22,8 @@ public class IndexPage extends MainPage {
 
 
 
-    public IndexPage(WebDriver driver, String url) {
-        super(driver);
+    public IndexPage(WebDriver driver, String url, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
         this.url = url;
     }

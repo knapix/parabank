@@ -2,7 +2,7 @@
     <parameter name="url" value="http://parabank.parasoft.com"/>
     <test name="AccountTest">
         <classes>
-            <class name="AccountScenarioTest"/>
+            <class name="AccountTest"/>
         </classes>
     </test>
 </suite>

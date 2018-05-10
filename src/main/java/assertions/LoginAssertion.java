@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.ITest;
+import org.testng.ITestContext;
 import pages.MainPage;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class LoginAssertion extends MainPage {
     private List<WebElement> userInfoElements;
 
 
-    public LoginAssertion(WebDriver driver) {
-        super(driver);
+    public LoginAssertion(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
     }
 

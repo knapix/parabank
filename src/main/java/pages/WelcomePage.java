@@ -14,7 +14,7 @@ public class WelcomePage extends MainPage {
 
     public WelcomePage(WebDriver driver, ITestContext context) {
         super(driver, context);
-        registrationAssertion = new RegistrationAssertion(driver);
+        registrationAssertion = new RegistrationAssertion(driver, context);
         PageFactory.initElements(driver, this);
     }
 

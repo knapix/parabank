@@ -1,3 +1,4 @@
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.AccountPage;
@@ -13,7 +14,7 @@ public class AccountTest extends MainTest {
 
 
 
-    @BeforeTest
+    @BeforeMethod
     public void beforeTest() {
         accountPage = indexPage.run(new RegisterScenario(username))
                 .clickLogoutButton()

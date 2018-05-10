@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import pages.MainPage;
 
 import java.util.List;
@@ -19,8 +20,8 @@ public class TransferAssertion extends MainPage {
     @FindBy(css = "[value='Transfer']")
     private WebElement transferButtonAssertion;
 
-    public TransferAssertion(WebDriver driver) {
-        super(driver);
+    public TransferAssertion(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver,this);
     }
 

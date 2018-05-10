@@ -50,10 +50,10 @@ public class MainTest {
 //        }
         // driver = new RemoteWebDriver(hubUrl, capabilities);
         //driver = new RemoteWebDriver(new URL("http://192.168.43.178:4444"),capabilities);
-        indexPage = new IndexPage(driver, url);
-        registrationPage = new RegistrationPage(driver);
-        welcomePage = new WelcomePage(driver);
-        accountPage = new AccountPage(driver);
+        indexPage = new IndexPage(driver, url, context);
+        registrationPage = new RegistrationPage(driver, context);
+        welcomePage = new WelcomePage(driver, context);
+        accountPage = new AccountPage(driver, context);
 
         Random rg = new Random();
         int randomInt = rg.nextInt(1000);

@@ -46,12 +46,12 @@ public class IndexPage extends MainPage {
 
     public AccountPage clickLoginButton() {
         loginButton.click();
-        return new AccountPage(driver);
+        return new AccountPage(driver, getContext());
     }
 
     public RegistrationPage clickRegisterLinkButton() {
         registerLinkButton.click();
-        return new RegistrationPage(driver);
+        return new RegistrationPage(driver, getContext());
     }
 
 }

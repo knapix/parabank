@@ -25,7 +25,7 @@ public class AccountPage extends MainPage {
     public AccountPage(WebDriver driver, ITestContext context) {
         super(driver, context);
         PageFactory.initElements(driver, this);
-        loginAssertion = new LoginAssertion(driver);
+        loginAssertion = new LoginAssertion(driver, context);
     }
 
     public OpenAccountPage openNewAccount() {

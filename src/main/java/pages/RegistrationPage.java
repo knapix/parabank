@@ -106,7 +106,7 @@ public class RegistrationPage extends MainPage {
 
     public WelcomePage clickRegisterButton() {
         registerButton.click();
-        return new WelcomePage(driver);
+        return new WelcomePage(driver, getContext());
     }
 
 

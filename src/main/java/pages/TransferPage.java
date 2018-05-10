@@ -26,7 +26,7 @@ public class TransferPage extends MainPage {
         public TransferPage(WebDriver driver, ITestContext context) {
         super(driver, context);
         PageFactory.initElements(driver, this);
-        transferAssertion = new TransferAssertion(driver);
+        transferAssertion = new TransferAssertion(driver, context);
     }
 
 

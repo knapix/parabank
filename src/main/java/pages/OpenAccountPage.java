@@ -22,7 +22,7 @@ public class OpenAccountPage extends MainPage {
     public OpenAccountPage(WebDriver driver, ITestContext context) {
         super(driver, context);
         PageFactory.initElements(driver,this);
-        accountAssertion = new AccountAssertion(driver);
+        accountAssertion = new AccountAssertion(driver, context);
     }
 
     public OpenAccountPage setAccountType(String value) {
